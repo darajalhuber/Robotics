@@ -55,7 +55,7 @@ void getYellowHubGriffinOP(){
 
 
 void runProgram(){
-		//move mantis arms out of the way
+	//move mantis arms out of the way
 	moveMotor(MantisLeft,100,degrees,50);
 	moveMotor(MantisRight,100,degrees,50);
 	//get yellow hub
@@ -86,45 +86,45 @@ void runProgram(){
 }
 
 void runSecondProgram(){
-		//move mantis arms out of the way
+	//move mantis arms out of the way
 	moveMotor(MantisLeft,100,degrees,50);
 	moveMotor(MantisRight,100,degrees,50);
 	//get yellow hub
 	getYellowHubGriffin();
 	//get orange hubs
-	turnRight(90,degrees,100);
+	turnRight(92,degrees,100);
 	moveArm(1,-100);
 	forward(1.6,seconds,100);
 	moveMotor(MantisLeft,100,degrees,-50);
 	//move to score zone
 	backward(2,seconds,100);
 	turnLeft(340,degrees,100);
-	forward(1.9,seconds,100);
+	forward(1.6,seconds,100);
 	backward(0.2,seconds,100);
 	moveArm(0.3,80);
 	//stack yellow
 	moveMotor(MantisLeft,100,degrees,50);
-	backward(0.8,seconds,100);
+	backward(0.7,seconds,100);
 	turnRight(150,degrees,100);
 	forward(0.4,seconds,100);
-	turnLeft(230,degrees,100);
-	forward(1,seconds,50);
+	turnLeft(235,degrees,100);
+	forward(1.1,seconds,50);
 	moveArm(0.9,-80);
 	moveArm(0.4,60);
-	backward(0.7,seconds,100);
+	backward(0.6,seconds,100);
 	//hang
 	turnRight(200,degrees,100);
-	backward(2,seconds,100);
+	backward(1.3,seconds,100);
+	turnRight(45,degrees,100);
 	raiseArmTop();
 	moveMotor(MantisLeft,100,degrees,-50);
 	moveMotor(MantisRight,100,degrees,-50);
-	turnRight(105,degrees,100);
-	backward(0.7,seconds,100);
+	//turnRight(200,degrees,100);
 
 	forward(1.5,seconds,100);
 	moveArm(3.5,-100);
 
-		repeat(forever){
+	repeat(forever){
 		stopAllMotors();
 	}
 }
@@ -132,7 +132,7 @@ void runSecondProgram(){
 task main()
 {
 	waitUntil(getBumperValue(TopButton) == 1);
-  runProgram();
-  waitUntil(getBumperValue(TopButton) == 1);
-  runSecondProgram();
+	runProgram();
+	waitUntil(getBumperValue(TopButton) == 1);
+	runSecondProgram();
 }
